@@ -1,0 +1,38 @@
+---
+import ExperienceItems from "./ExperienceItems.astro"
+
+const EXPERIENCIE = [
+{
+date:'Jul 2023 - Present',
+title:'Web Developer in PolentaSocial',
+description:'As a web developer, I have cultivated my experience in WordPress, HTML, CSS and JavaScript. My agile approach, especially with Scrum, has been key in effective project management. I have created various websites, both in WordPress and JavaScript',
+link:'',
+},
+{
+date:'Mar 2023 - Jul 2023',
+title:'Software Developer Internship in GAOTek Inc',
+description:'As a web developer, I have cultivated my experience in WordPress, HTML, CSS and JavaScript. My agile approach, especially with Scrum, has been key in effective project management. I have created various websites, both in WordPress and JavaScript',
+link:'',
+},
+{
+date:'Aug 2022',
+title:'FreeLancer',
+description:'I started 2 months ago to put my knowledge as a web developer into practice in projects like FreeLancer, I developed projects for a medical services company and another company dedicated to the sale of candles and other products. I developed these projects by designing the web with Figma, and then passing them to code with html, css and javaScript',
+link:'',
+},
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">    
+    {
+        EXPERIENCIE.map(experiencie => (
+        <li class="mb-10 ms-4">
+        <ExperienceItems {...experiencie}/>    
+        </li>
+        ))
+    }              
+    <li class="mb-10 ms-4">
+       
+    </li>
+    
+</ol>
+
