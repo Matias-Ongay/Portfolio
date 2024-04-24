@@ -9,7 +9,6 @@ import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import BriefCaseIcon from '../icons/BriefCase.astro';
 import CodeIcon from '../icons/Code.astro';
-import Projects from '../components/Projects.astro';
 import  SliderReact  from '../components/SliderReact';
 
 
@@ -57,10 +56,7 @@ import  SliderReact  from '../components/SliderReact';
 		<SectionContainer id="projects">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<CodeIcon class="size-8"/>Projects</h2>
-				<Projects/>
-		</SectionContainer>
-		<SectionContainer>
-			<SliderReact client:load/>
+				<SliderReact client:load/>
 		</SectionContainer>
 		
 	</main>
