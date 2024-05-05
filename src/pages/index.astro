@@ -55,8 +55,13 @@ import  SliderReact  from '../components/SliderReact';
 		</SectionContainer>
 		<SectionContainer id="projects">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-				<CodeIcon class="size-8"/>Projects</h2>
-				<SliderReact client:load/>
+				<CodeIcon class="size-8"/>Projects in Code</h2>
+				<SliderReact client:load projectType="CODE"/>
+		</SectionContainer>
+		<SectionContainer id="projects">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-8"/>Projects in WordPress</h2>
+				<SliderReact client:load projectType="Wordpress"/>
 		</SectionContainer>
 		
 	</main>

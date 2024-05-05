@@ -1,5 +1,5 @@
 import {ReactNewIcon} from '../icons/ReactNewIcon'
-const TAGS = {
+const TAGSWORDPRESS = {
     REACT: {
         name: 'React.js',
         class: 'bg-black text-white',
@@ -8,24 +8,24 @@ const TAGS = {
 };
 
 
-const PROJECTS = [
+const PROJECTSWORDPRESS = [
     {
-        title: 'CryptoTop',
+        title: 'Wordpress',
         description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
         link: 'https://cryptotop1.netlify.app/',
         github: 'https://github.com/Matias-Ongay/CryptoTop',
         image: './projects/crypto.webp',
-        tags: [TAGS.REACT]
+        tags: [TAGSWORDPRESS.REACT]
     },
     {
-        title: 'React Pelis',
+        title: 'Wordpress 2',
         description: 'Pagina realziada en react para consumir una api de peliculas muy chula y divertida.',
         link: 'https://cryptotop2.netlify.app/',
         github:'https://github.com/Matias-Ongay/CryptoTop2',
         image:'./projects/crypto.webp',
-        tags:[TAGS.REACT]
+        tags:[TAGSWORDPRESS.REACT]
     },
 
 ];
 
-export { TAGS, PROJECTS };
+export { TAGSWORDPRESS, PROJECTSWORDPRESS };

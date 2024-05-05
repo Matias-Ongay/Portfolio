@@ -1,33 +1,8 @@
 import React, { useState,useEffect } from "react";
 import 'animate.css';
 import {ReactNewIcon} from '../icons/ReactNewIcon'
-const TAGS = {
-    REACT: {
-        name:'React.js',
-        class:'bg-black text-white',
-        icon: <ReactNewIcon/>
-    },
-};
-
-const PROJECTS = [
-    {
-        title: 'CryptoTop',
-        description: 'Rem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
-        link: 'https://cryptotop1.netlify.app/',
-        github:'https://github.com/Matias-Ongay/CryptoTop',
-        image:'./projects/crypto.webp',
-        tags:[TAGS.REACT]
-    
-    },
-    {
-        title: 'React Pelis',
-        description: 'Pagina realziada en react para consumir una api de peliculas muy chula y divertida.',
-        link: 'https://cryptotop2.netlify.app/',
-        github:'https://github.com/Matias-Ongay/CryptoTop2',
-        image:'./projects/crypto.webp',
-        tags:[TAGS.REACT]
-    },
-];
+import { PROJECTS,TAGS } from "./projects";
+import { TAGSWORDPRESS, PROJECTSWORDPRESS } from "./projectsWordpress";
 
 const Card = ({ title, description, image, tags, animate,link,github }) => {
     return (
@@ -36,11 +11,11 @@ const Card = ({ title, description, image, tags, animate,link,github }) => {
             <p className="text-lg mb-4 text-pretty">{description}</p>
             <ul className="flex gap-x-4 flex-row">
                 {tags.map(tag => (
-                    <span key={tag.name} className={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-2 align-middle mb-3`}>
-                        {tag.icon}
-                        {tag.name}
-                    </span>
-                ))}    
+                        <span key={tag.name} className={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-2 align-middle mb-3`}>
+                            <tag.icon className="size-4" /> {/* Renderiza el icono aquí */}
+                            {tag.name}
+                        </span>
+                    ))} 
             </ul>
             <img className="rounded-lg" src={image} alt={`Captura de pantalla del proyecto ${title}`}/>
             <div className="flex items-center space-x-2 mt-3">
@@ -58,7 +33,7 @@ const Card = ({ title, description, image, tags, animate,link,github }) => {
     );
 };
 
-const Carousel = () => {
+const Carousel = ({projectType}) => {
     const [index, setIndex] = useState(0);
     const [animate, setAnimate] = useState("");
 
@@ -90,7 +65,20 @@ const Carousel = () => {
             bg-white/5 hover:scale-110 hover:bg-white/10 transition
             " onClick={handleNext}>Next</button>
             </div>
-            
+            {projectType === 'Wordpress' ? (
+            // Aquí puedes colocar el código para WordPress si es necesario
+            <div>
+               <Card
+                    title={PROJECTSWORDPRESS[index].title}
+                    description={PROJECTSWORDPRESS[index].description}
+                    image={PROJECTSWORDPRESS[index].image}
+                    tags={PROJECTSWORDPRESS[index].tags}
+                    github={PROJECTSWORDPRESS[index].github}
+                    link={PROJECTSWORDPRESS[index].link}
+                    animate={animate}
+                />
+            </div>
+        ) : (
             <div className="cards-container mt-3">
                 <Card
                     title={PROJECTS[index].title}
@@ -102,8 +90,8 @@ const Carousel = () => {
                     animate={animate}
                 />
             </div>
-            
-        </div>
+        )}
+    </div>
     );
 };
 
