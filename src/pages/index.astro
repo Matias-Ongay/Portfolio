@@ -9,10 +9,10 @@ import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import BriefCaseIcon from '../icons/BriefCase.astro';
 import CodeIcon from '../icons/Code.astro';
-import  SliderReact  from '../components/SliderReact';
-
-
-
+import SliderReact  from '../components/SliderReact';
+import AboutMe from '../components/AboutMe.astro';
+import AboutIcon from '../icons/AboutIcon.astro';
+import WordPress from '../icons/WordPress.astro';
 ---
 
 <Layout
@@ -21,14 +21,18 @@ import  SliderReact  from '../components/SliderReact';
  >
 	<main class="px-4">
 		<SectionContainer class="py-44 pb-32">
-			<img class="rounded-full size-12 mb-4" src="" alt="foto matias ongay">
+			<div class="flex ">
+				<img class="rounded-full size-20 mb-4 mr-5 shadow-lg" src="./projects/MATINEW.webp" alt="foto matias ongay">
+				<Badge >Available to work</Badge>
+			</div>
+			
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center flex-row gap-x-5 gap-x-4 pb-6  lg:pb-10">Hey, my name is Matias Ongay
 			<a
 			href="https://www.linkedin.com/in/matias-ongay-564135251/?locale=en_US"
 			target="_blank"
 			rel="noopener"
 			class="flex justify-center items-center">
-			<Badge>Available to work</Badge>
+			
 			</a></h1>
 			<h2 class="text-xl lg:text-2xl text-wrap masx-w-[700px]"><span class="opacity-80">+2 years of experience.</span> <span class="text-blue-200/90 ">Web Developer.</span>  <span class="opacity-80">From Argentina.</span>
 			<span class="text-yellow-200/90">Efficient site builder.</span>
@@ -55,13 +59,19 @@ import  SliderReact  from '../components/SliderReact';
 		</SectionContainer>
 		<SectionContainer id="projects">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-				<CodeIcon class="size-8"/>Projects in Code</h2>
+				<CodeIcon class="size-8"/>Projects developed in Code</h2>
 				<SliderReact client:load projectType="CODE"/>
 		</SectionContainer>
 		<SectionContainer id="projects">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-				<CodeIcon class="size-8"/>Projects in WordPress</h2>
+				<WordPress class="size-8"/>Projects developed in WordPress</h2>
 				<SliderReact client:load projectType="Wordpress"/>
+		</SectionContainer>
+		<SectionContainer id="about">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<AboutIcon class="size-8"/>About Me</h2>
+			
+			<AboutMe/>
 		</SectionContainer>
 		
 	</main>
